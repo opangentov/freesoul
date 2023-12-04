@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.Home">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:translationZ="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:foregroundGravity="center_vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Welcome, email"
+            android:textColor="@color/ijo1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/topbar"
+            app:layout_constraintLeft_toLeftOf="@id/topbar"
+            app:layout_constraintRight_toLeftOf="@id/tv_option"
+            app:layout_constraintTop_toTopOf="@id/topbar"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/tv_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/setting_button"
+            android:gravity="center"
+            android:padding="5dp"
+
+            app:layout_constraintBottom_toBottomOf="@id/topbar"
+            app:layout_constraintLeft_toRightOf="@id/tv_result"
+            app:layout_constraintRight_toRightOf="@+id/topbar"
+            app:layout_constraintTop_toTopOf="@id/topbar"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <View
+            android:id="@+id/hr"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@color/silver"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- end of topbar-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_contact"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:nestedScrollingEnabled="false"
+        android:paddingBottom="@dimen/dimen_16_margin"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topbar"
+
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_contact" />
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_16_margin"
+        app:layout_constraintTop_toBottomOf="@id/topbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <LinearLayout
+            android:id="@+id/container_fotooprofil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            >
+            <ImageView
+                android:id="@+id/foto_profil"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_galeri"
+                >
+
+
+            </ImageView>
+            <LinearLayout
+                android:id="@+id/container_datafoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                >
+
+                <ImageButton
+                    android:id="@+id/btn_ambil_foto"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:background="@drawable/ic_takephoto"
+                    android:padding="10dp"
+                    tools:ignore="TouchTargetSizeCheck">
+
+                </ImageButton>
+                <TextView
+                    android:id="@+id/tv_namaProfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="start"
+                    android:padding="10dp"
+                    android:text="Nama"
+                    android:textColor="@color/ijo1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/silver"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:layout_marginTop="5dp"
+            android:lines="1"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/silver" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16_margin"
+            android:backgroundTint="@color/silver"
+            android:hint="+62XXXXXXXXX"
+            android:inputType="phone"
+            android:lines="1"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/silver" />
+
+        <EditText
+            android:id="@+id/et_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16_margin"
+            android:backgroundTint="@color/silver"
+            android:hint="Alamat"
+            android:inputType="text"
+            android:lines="1"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/silver" />
+<!--        <EditText-->
+<!--            android:id="@+id/et_update"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:layout_marginTop="@dimen/dimen_16_margin"-->
+<!--            android:backgroundTint="@color/silver"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:hint="Group"-->
+<!--            android:lines="1"-->
+<!--            android:inputType="text"-->
+<!--            android:textColorHint="@color/silver"/>-->
+
+        <LinearLayout
+            android:id="@+id/sync1_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/teks_1Sync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="onesync"
+                android:textColor="@color/ijo1"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintVertical_bias="0.5" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/two_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="Bersihkan"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:text="Simpan"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sync_container2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/teks_updateSync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="updated"
+                android:textColor="@color/ijo1"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintVertical_bias="0.5"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/two_buttonA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="select"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+
+                android:text="update"
+                android:textSize="18dp" />
+            
+        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/content_buttonlogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/two_buttonA">
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/button_login"
+                    android:gravity="center"
+                    android:text="LOGOUT"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

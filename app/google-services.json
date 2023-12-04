@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "590560899988",
+    "project_id": "coba-coba-papb",
+    "storage_bucket": "coba-coba-papb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590560899988:android:5c4461da1646ba10225581",
+        "android_client_info": {
+          "package_name": "com.example.freesoul"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDspV924kLQaUmw_QOt_bO3HgNxeEASLLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
